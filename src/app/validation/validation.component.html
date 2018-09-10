@@ -1,0 +1,23 @@
+<div class="container">
+<h3>Validation Example</h3>
+
+<form #form="ngForm" [class.was-validated]="firstName.touched" novalidate>                  <!--[class.was-validated]="firstName.touched" is like 'if'. If firstName(input) touched, apply class-->
+    <div class="form-group">
+        <label class="control-label">First Name</label>
+        <input required maxlength="10" #firstName="ngModel" type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName"> <!--#firstName="ngModel" required for {{}} statements at bottom to appear-->
+    </div>
+
+    <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
+        First name is required
+    </div>
+</form>
+
+<h3>Classes</h3>
+<!-- <h4>{{firstName.className}}</h4> //**Need to remove ="ngModel" from #firstname**--> 
+<h4>{{firstName.dirty}}</h4>
+{{firstName.valid}}
+
+
+
+
+</div>
