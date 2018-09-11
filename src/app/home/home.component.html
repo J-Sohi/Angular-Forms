@@ -1,6 +1,6 @@
 <div class="container">
     <h3>Employee Form</h3>
-    <form #form="ngForm" [class.was-validated]="form.touched" novalidate> <!-- For some reason form.touched doesn't work without #firstName present in any input tag -->
+    <form #form="ngForm" (submit)="submitForm(form)" [class.was-validated]="form.touched" novalidate> <!-- For some reason form.touched doesn't work without #firstName present in any input tag -->
         <div class="form-group">
             <label for="firstNameId">First Name</label>
             <!-- <input id="firstNameId" type="text" class="form-control" name="firstName"

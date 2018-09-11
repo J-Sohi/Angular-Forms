@@ -15,6 +15,7 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { ValidationComponent } from './validation/validation.component';
+import { FormPoster } from './services/form-poster.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ValidationComponent } from './validation/validation.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
+    FormPoster,
     GithubService
   ],
   bootstrap: [ AppComponent ]
